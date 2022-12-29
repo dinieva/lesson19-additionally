@@ -31,8 +31,8 @@ let timeNow = () => {
 };
 
 let daysBeforeNewYear = () => {
-    const nextYear = new Date(date.getFullYear() + 1, 0, 1);
-    let remainingDays = Math.floor((newYear.getTime() - date.getTime()) / 1000 / 60 / 60 / 24);
+    let nextYear = new Date(date.getFullYear() + 1, 0, 1);
+    let remainingDays = Math.floor((nextYear.getTime() - date.getTime()) / 1000 / 60 / 60 / 24);
     let ending = (num) => {
         num = num.toString().slice(-1);
         if (num == 1) {
@@ -43,7 +43,7 @@ let daysBeforeNewYear = () => {
             return 'дней';
         }
     };
-    timePar.innerHTML = 'До нового года осталось ' + remainingDays + ending(remainingDays);
+    daysBeforeNewYearPar.innerHTML = 'До нового года осталось ' + remainingDays + ending(remainingDays);
 };
 
 greetings();
